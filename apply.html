@@ -1,352 +1,376 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
     <meta charset="UTF-8">
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Apply | ILLFORD Digital</title>
 
     <link rel="stylesheet" href="css/style.css">
-
 </head>
-
 
 <body>
 
-
-    <!-- =========================
-         NAVIGATION
-    ========================== -->
+    <!-- ================= NAVBAR ================= -->
 
     <header class="navbar">
-
         <div class="container nav-container">
 
             <a href="index.html" class="logo">
-
-                ILLF<span>O</span>RD
-
+                ILLFORD
                 <small>DIGITAL</small>
-
             </a>
 
-
-            <nav>
-
-                <a href="index.html">
-                    Home
-                </a>
-
-                <a href="jobs.html">
-                    Jobs
-                </a>
-
-                <a href="about.html">
-                    About
-                </a>
-
-                <a href="contact.html">
-                    Contact
-                </a>
-
+            <nav class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="jobs.html">Careers</a>
+                <a href="about.html">About</a>
+                <a href="contact.html">Contact</a>
             </nav>
 
-        </div>
+            <a href="jobs.html" class="nav-button">
+                View Jobs →
+            </a>
 
+        </div>
     </header>
 
 
+    <!-- ================= APPLICATION HERO ================= -->
 
-    <!-- =========================
-         APPLICATION PAGE
-    ========================== -->
+    <section class="application-hero">
 
-    <main>
+        <div class="container">
+
+            <div class="application-label">
+                CAREER APPLICATION
+            </div>
+
+            <h1>
+                Start your<br>
+                <span>next chapter.</span>
+            </h1>
+
+            <p>
+                Tell us about yourself, your skills and what you can
+                bring to the ILLFORD Digital team.
+            </p>
+
+        </div>
+
+    </section>
 
 
-        <section class="application-section">
+    <!-- ================= APPLICATION SECTION ================= -->
 
-            <div class="container">
+    <main class="application-section">
 
+        <div class="container">
 
-                <div class="application-header">
+            <!-- Selected Job -->
 
-                    <p class="eyebrow">
-                        JOIN OUR TEAM
-                    </p>
+            <div class="selected-job-box">
 
-                    <h1>
-                        Apply for a position
-                    </h1>
-
-                    <p>
-                        Complete the form below and our team
-                        will review your application.
-                    </p>
-
+                <div class="selected-job-label">
+                    YOU ARE APPLYING FOR
                 </div>
 
-
-
-                <!-- Selected Job -->
-
-                <div class="selected-job">
-
-                    <span>
-                        You are applying for
-                    </span>
-
-                    <strong id="selectedJob">
-                        Loading...
-                    </strong>
-
-                </div>
-
-
-
-                <!-- Application Form -->
-
-                <form
-                    id="applicationForm"
-                    class="application-form"
-                >
-
-
-                    <!-- Name -->
-
-                    <div class="form-group">
-
-                        <label for="fullName">
-                            Full Name
-                        </label>
-
-                        <input
-                            type="text"
-                            id="fullName"
-                            name="fullName"
-                            placeholder="Enter your full name"
-                            required
-                        >
-
-                    </div>
-
-
-
-                    <!-- Email -->
-
-                    <div class="form-group">
-
-                        <label for="email">
-                            Email Address
-                        </label>
-
-                        <input
-                            type="email"
-                            id="email"
-                            name="email"
-                            placeholder="Enter your email address"
-                            required
-                        >
-
-                    </div>
-
-
-
-                    <!-- Phone -->
-
-                    <div class="form-group">
-
-                        <label for="phone">
-                            Phone Number
-                        </label>
-
-                        <input
-                            type="tel"
-                            id="phone"
-                            name="phone"
-                            placeholder="Enter your phone number"
-                            required
-                        >
-
-                    </div>
-
-
-
-                    <!-- Experience -->
-
-                    <div class="form-group">
-
-                        <label for="experience">
-                            Experience
-                        </label>
-
-                        <select
-                            id="experience"
-                            name="experience"
-                            required
-                        >
-
-                            <option value="">
-                                Select your experience
-                            </option>
-
-                            <option value="Fresher">
-                                Fresher
-                            </option>
-
-                            <option value="0-1">
-                                0–1 Years
-                            </option>
-
-                            <option value="1-2">
-                                1–2 Years
-                            </option>
-
-                            <option value="2-5">
-                                2–5 Years
-                            </option>
-
-                            <option value="5+">
-                                5+ Years
-                            </option>
-
-                        </select>
-
-                    </div>
-
-
-
-                    <!-- Cover Letter -->
-
-                    <div class="form-group">
-
-                        <label for="message">
-                            Cover Letter
-                        </label>
-
-                        <textarea
-                            id="message"
-                            name="message"
-                            rows="6"
-                            placeholder="Tell us why you would be a good fit..."
-                            required
-                        ></textarea>
-
-                    </div>
-
-
-
-                    <!-- Resume -->
-
-                    <div class="form-group">
-
-                        <label for="resume">
-                            Resume
-                        </label>
-
-                        <input
-                            type="file"
-                            id="resume"
-                            name="resume"
-                            accept=".pdf,.doc,.docx"
-                            required
-                        >
-
-                        <small>
-                            Accepted formats: PDF, DOC, DOCX
-                        </small>
-
-                    </div>
-
-
-
-                    <!-- Submit -->
-
-                    <button
-                        type="submit"
-                        class="submit-btn"
-                    >
-                        Submit Application →
-                    </button>
-
-
-                    <!-- Success Message -->
-
-                    <div
-                        id="successMessage"
-                        class="success-message"
-                    >
-
-                        <strong>
-                            Application submitted successfully!
-                        </strong>
-
-                        <p>
-                            Thank you for applying.
-                            Our team will review your application
-                            and contact you if your profile is shortlisted.
-                        </p>
-
-                    </div>
-
-
-                </form>
+                <h2 id="selectedJob">
+                    General Application
+                </h2>
 
             </div>
 
-        </section>
 
+            <!-- Application Form -->
+
+            <form id="applicationForm" class="application-form">
+
+                <!-- Full Name -->
+
+                <div class="form-group">
+
+                    <label for="fullName">
+                        Full Name <span>*</span>
+                    </label>
+
+                    <input
+                        type="text"
+                        id="fullName"
+                        name="fullName"
+                        placeholder="Enter your full name"
+                        required
+                    >
+
+                </div>
+
+
+                <!-- Email -->
+
+                <div class="form-group">
+
+                    <label for="email">
+                        Email Address <span>*</span>
+                    </label>
+
+                    <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        placeholder="you@example.com"
+                        required
+                    >
+
+                </div>
+
+
+                <!-- Phone -->
+
+                <div class="form-group">
+
+                    <label for="phone">
+                        Phone Number <span>*</span>
+                    </label>
+
+                    <input
+                        type="tel"
+                        id="phone"
+                        name="phone"
+                        placeholder="+91 XXXXX XXXXX"
+                        required
+                    >
+
+                </div>
+
+
+                <!-- Experience -->
+
+                <div class="form-group">
+
+                    <label for="experience">
+                        Experience <span>*</span>
+                    </label>
+
+                    <select
+                        id="experience"
+                        name="experience"
+                        required
+                    >
+
+                        <option value="">
+                            Select experience
+                        </option>
+
+                        <option value="Fresher">
+                            Fresher
+                        </option>
+
+                        <option value="0-1 Years">
+                            0–1 Years
+                        </option>
+
+                        <option value="1-2 Years">
+                            1–2 Years
+                        </option>
+
+                        <option value="2+ Years">
+                            2+ Years
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <!-- Qualification -->
+
+                <div class="form-group">
+
+                    <label for="qualification">
+                        Qualification <span>*</span>
+                    </label>
+
+                    <input
+                        type="text"
+                        id="qualification"
+                        name="qualification"
+                        placeholder="e.g. B.Tech in Electronics and Communication"
+                        required
+                    >
+
+                </div>
+
+
+                <!-- Skills -->
+
+                <div class="form-group">
+
+                    <label for="skills">
+                        Skills <span>*</span>
+                    </label>
+
+                    <input
+                        type="text"
+                        id="skills"
+                        name="skills"
+                        placeholder="e.g. HTML, CSS, JavaScript, React"
+                        required
+                    >
+
+                </div>
+
+
+                <!-- Cover Message -->
+
+                <div class="form-group">
+
+                    <label for="message">
+                        Cover Message <span>*</span>
+                    </label>
+
+                    <textarea
+                        id="message"
+                        name="message"
+                        rows="7"
+                        placeholder="Tell us why you are interested in this role..."
+                        required
+                    ></textarea>
+
+                </div>
+
+
+                <!-- Resume -->
+
+                <div class="form-group">
+
+                    <label for="resume">
+                        Resume <span>*</span>
+                    </label>
+
+                    <input
+                        type="file"
+                        id="resume"
+                        name="resume"
+                        accept=".pdf,.doc,.docx"
+                        required
+                    >
+
+                    <small class="file-note">
+                        Accepted formats: PDF, DOC, DOCX
+                    </small>
+
+                </div>
+
+
+                <!-- Submit -->
+
+                <div class="form-submit">
+
+                    <button
+                        type="submit"
+                        class="application-submit"
+                    >
+                        SUBMIT APPLICATION
+                        <span>↗</span>
+                    </button>
+
+                </div>
+
+
+                <!-- Success Message -->
+
+                <div
+                    id="successMessage"
+                    class="success-message"
+                >
+
+                    <div class="success-icon">
+                        ✓
+                    </div>
+
+                    <div>
+                        <h3>Application submitted successfully.</h3>
+
+                        <p>
+                            Thank you for applying to ILLFORD Digital.
+                            Our team will review your application and
+                            get back to you if your profile is shortlisted.
+                        </p>
+                    </div>
+
+                </div>
+
+            </form>
+
+        </div>
 
     </main>
 
 
+    <!-- ================= CTA ================= -->
 
-    <!-- =========================
-         FOOTER
-    ========================== -->
+    <section class="cta-section">
 
-    <footer class="footer">
-
-        <div class="container footer-content">
-
+        <div class="container cta-container">
 
             <div>
 
-                <a
-                    href="index.html"
-                    class="logo footer-logo"
-                >
+                <span class="cta-label">
+                    JOIN THE TEAM
+                </span>
 
-                    ILLF<span>O</span>RD
+                <h2>
+                    Ready for your<br>
+                    next chapter?
+                </h2>
 
+            </div>
+
+            <a href="jobs.html" class="cta-button">
+                VIEW OPEN POSITIONS →
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer class="site-footer">
+
+        <div class="container footer-grid">
+
+            <!-- Brand -->
+
+            <div class="footer-brand">
+
+                <a href="index.html" class="footer-logo">
+                    ILLFORD
                     <small>DIGITAL</small>
-
                 </a>
 
                 <p>
-                    Building digital experiences and
-                    creating opportunities.
+                    Building digital experiences and creating opportunities.
                 </p>
 
             </div>
 
 
+            <!-- Quick Links -->
 
-            <div class="footer-links">
+            <div class="footer-column">
 
-                <h4>
-                    Quick Links
-                </h4>
+                <h3>
+                    QUICK LINKS
+                </h3>
 
                 <a href="index.html">
                     Home
                 </a>
 
                 <a href="jobs.html">
-                    Jobs
+                    Careers
                 </a>
 
                 <a href="about.html">
@@ -360,41 +384,51 @@
             </div>
 
 
+            <!-- Contact -->
 
-            <div class="footer-links">
+            <div class="footer-column">
 
-                <h4>
-                    Contact
-                </h4>
+                <h3>
+                    CONTACT
+                </h3>
 
-                <p>
+                <a href="mailto:career@illforddigital.com">
                     career@illforddigital.com
-                </p>
+                </a>
 
-                <p>
+                <a href="tel:+919847861800">
                     +91 9847861800
-                </p>
+                </a>
+
+                <span>
+                    Kerala, India
+                </span>
 
             </div>
-
 
         </div>
 
 
-        <div class="container copyright">
+        <!-- Footer Bottom -->
+
+        <div class="container footer-bottom">
 
             <p>
                 © 2026 ILLFORD Digital. All rights reserved.
             </p>
+
+            <span>
+                BUILD · CREATE · GROW
+            </span>
 
         </div>
 
     </footer>
 
 
+    <!-- ================= JAVASCRIPT ================= -->
 
     <script src="js/apply.js"></script>
 
 </body>
-
 </html>

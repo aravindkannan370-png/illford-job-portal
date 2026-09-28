@@ -1,15 +1,11 @@
-// =========================
-// GET SELECTED JOB
-// =========================
+// ================= APPLICATION PAGE =================
 
+// Get job name from URL
 const urlParams = new URLSearchParams(window.location.search);
-
 const job = urlParams.get("job");
 
+// Selected job display
 const selectedJob = document.getElementById("selectedJob");
-
-
-// Show selected job
 
 if (job) {
     selectedJob.textContent = job;
@@ -18,14 +14,12 @@ if (job) {
 }
 
 
-// =========================
-// APPLICATION FORM
-// =========================
-
+// Get form and success message
 const applicationForm = document.getElementById("applicationForm");
-
 const successMessage = document.getElementById("successMessage");
 
+
+// ================= FORM SUBMISSION =================
 
 applicationForm.addEventListener("submit", function (event) {
 
@@ -34,27 +28,36 @@ applicationForm.addEventListener("submit", function (event) {
 
 
     // Get form values
+    const fullName = document.getElementById("fullName").value.trim();
 
-    const fullName = document.getElementById("fullName").value;
+    const email = document.getElementById("email").value.trim();
 
-    const email = document.getElementById("email").value;
-
-    const phone = document.getElementById("phone").value;
+    const phone = document.getElementById("phone").value.trim();
 
     const experience = document.getElementById("experience").value;
 
-    const message = document.getElementById("message").value;
+    const qualification =
+        document.getElementById("qualification").value.trim();
 
-    const resume = document.getElementById("resume").files[0];
+    const skills =
+        document.getElementById("skills").value.trim();
+
+    const message =
+        document.getElementById("message").value.trim();
+
+    const resume =
+        document.getElementById("resume").files[0];
 
 
-    // Basic validation
+    // ================= REQUIRED FIELD VALIDATION =================
 
     if (
         !fullName ||
         !email ||
         !phone ||
         !experience ||
+        !qualification ||
+        !skills ||
         !message ||
         !resume
     ) {
@@ -65,17 +68,62 @@ applicationForm.addEventListener("submit", function (event) {
     }
 
 
-    // Show success message
+    // ================= EMAIL VALIDATION =================
 
-    successMessage.style.display = "block";
+    const emailPattern =
+        /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    if (!emailPattern.test(email)) {
+
+        alert("Please enter a valid email address.");
+
+        return;
+    }
 
 
-    // Hide the form
+    // ================= PHONE VALIDATION =================
 
+    const phonePattern =
+        /^[0-9+\-\s()]{10,15}$/;
+
+    if (!phonePattern.test(phone)) {
+
+        alert("Please enter a valid phone number.");
+
+        return;
+    }
+
+
+    // ================= RESUME VALIDATION =================
+
+    const allowedExtensions = [
+        "pdf",
+        "doc",
+        "docx"
+    ];
+
+    const fileName =
+        resume.name.toLowerCase();
+
+    const fileExtension =
+        fileName.split(".").pop();
+
+    if (!allowedExtensions.includes(fileExtension)) {
+
+        alert("Please upload your resume in PDF, DOC or DOCX format.");
+
+        return;
+    }
+
+
+    // ================= SHOW SUCCESS =================
+
+    successMessage.style.display = "flex";
+
+
+    // Disable form after successful submission
     applicationForm
-        .querySelectorAll(
-            "input, select, textarea, button"
-        )
+        .querySelectorAll("input, select, textarea, button")
         .forEach(function (element) {
 
             element.disabled = true;
@@ -84,7 +132,6 @@ applicationForm.addEventListener("submit", function (event) {
 
 
     // Scroll to success message
-
     successMessage.scrollIntoView({
         behavior: "smooth",
         block: "center"
